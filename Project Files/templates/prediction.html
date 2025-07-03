@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Predict | Pollen Grain Classifier</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+
+  <!-- Only Home button added -->
+  <div style="padding: 1rem;">
+    <a href="{{ url_for('index') }}" class="btn btn-primary">Home</a>
+  </div>
+
+  <main class="predict-page container text‑center">
+    {% if result %}
+      <h2 class="result-heading">Prediction Result</h2>
+      <p class="result-text">The pollen grain type is <span class="highlight">{{ result }}</span></p>
+    {% endif %}
+
+    {% if image %}
+      <img src="{{ url_for('static', filename='uploads/' + image) }}" alt="Uploaded pollen grain" class="preview-img" width="300" />
+    {% endif %}
+
+    <form action="{{ url_for('result') }}" method="post" enctype="multipart/form-data" class="upload-form">
+      <label class="file-input">
+        <input type="file" name="file" required />
+        <span>Choose an image</span>
+      </label>
+      <button type="submit" class="btn btn‑primary">Predict</button>
+    </form>
+  </main>
+</body>
+</html>
+

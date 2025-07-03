@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pollen Grain Classifier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+  <!-- ░░ HEADER ░░ -->
+  <header class="site-header">
+    <div class="container flex-between">
+      <h1 class="logo"><a href="{{ url_for('index') }}">Pollen Classifier</a></h1>
+      <nav class="main-nav">
+        <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+        <a href="{{ url_for('prediction') }}" class="nav-link">Predict</a>
+        <a href="{{ url_for('contact') }}" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ░░ HERO ░░ -->
+  <section class="hero">
+    <div class="container text‑center">
+      <h2 class="hero__title">Identify pollen grains in seconds ✨</h2>
+      <p class="hero__subtitle">Upload a microscopic image and let our AI reveal the grain species instantly.</p>
+      <a href="{{ url_for('prediction') }}" class="btn btn‑primary">Start Prediction</a>
+    </div>
+  </section>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="site-footer">
+    <div class="container text‑center small">
+      &copy; 2025 Pollen Classifier · Built with ❤ by Gandikota Narasimha
+    </div>
+  </footer>
+</body>
+</html>
