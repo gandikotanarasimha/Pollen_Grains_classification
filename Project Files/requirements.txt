@@ -6,3 +6,4 @@ gunicorn
 matplotlib
 seaborn
 scikit-learn
+python 3.10.10
